@@ -1,0 +1,161 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>EvaluationAlgorithms</class>
+ <widget class="QWidget" name="EvaluationAlgorithms">
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>1384</width>
+    <height>733</height>
+   </rect>
+  </property>
+  <property name="windowTitle">
+   <string>Form</string>
+  </property>
+  <layout class="QGridLayout" name="gridLayout">
+   <item row="1" column="0">
+    <widget class="QTextEdit" name="textEdit"/>
+   </item>
+   <item row="1" column="1">
+    <widget class="QTableWidget" name="Algorithms_table">
+     <column>
+      <property name="text">
+       <string>新建列</string>
+      </property>
+     </column>
+     <column>
+      <property name="text">
+       <string>新建列</string>
+      </property>
+     </column>
+    </widget>
+   </item>
+   <item row="0" column="0">
+    <widget class="QComboBox" name="comboBox">
+     <property name="minimumSize">
+      <size>
+       <width>200</width>
+       <height>0</height>
+      </size>
+     </property>
+     <property name="maximumSize">
+      <size>
+       <width>500</width>
+       <height>16777215</height>
+      </size>
+     </property>
+     <item>
+      <property name="text">
+       <string>频数分析</string>
+      </property>
+     </item>
+     <item>
+      <property name="text">
+       <string>交叉分析</string>
+      </property>
+     </item>
+     <item>
+      <property name="text">
+       <string>描述性统计分析</string>
+      </property>
+     </item>
+     <item>
+      <property name="text">
+       <string>正态性分析</string>
+      </property>
+     </item>
+     <item>
+      <property name="text">
+       <string>信度分析</string>
+      </property>
+     </item>
+     <item>
+      <property name="text">
+       <string>效度分析</string>
+      </property>
+     </item>
+     <item>
+      <property name="text">
+       <string>区分度分析</string>
+      </property>
+     </item>
+     <item>
+      <property name="text">
+       <string>熵权法</string>
+      </property>
+     </item>
+     <item>
+      <property name="text">
+       <string>层次分析法</string>
+      </property>
+     </item>
+     <item>
+      <property name="text">
+       <string>因子分析</string>
+      </property>
+     </item>
+     <item>
+      <property name="text">
+       <string>变异系数法</string>
+      </property>
+     </item>
+     <item>
+      <property name="text">
+       <string>熵权-变异系数组合法</string>
+      </property>
+     </item>
+     <item>
+      <property name="text">
+       <string>灰色关联分析</string>
+      </property>
+     </item>
+     <item>
+      <property name="text">
+       <string>单样本T检验</string>
+      </property>
+     </item>
+     <item>
+      <property name="text">
+       <string>配对样本T检验</string>
+      </property>
+     </item>
+     <item>
+      <property name="text">
+       <string>独立样本T检验</string>
+      </property>
+     </item>
+     <item>
+      <property name="text">
+       <string>相关性分析</string>
+      </property>
+     </item>
+     <item>
+      <property name="text">
+       <string>Kendall一致性检验</string>
+      </property>
+     </item>
+     <item>
+      <property name="text">
+       <string>模糊综合评价法</string>
+      </property>
+     </item>
+     <item>
+      <property name="text">
+       <string>客观和主观评价的得分算法</string>
+      </property>
+     </item>
+    </widget>
+   </item>
+   <item row="0" column="1">
+    <widget class="QPushButton" name="start_btn">
+     <property name="text">
+      <string>开始分析</string>
+     </property>
+    </widget>
+   </item>
+  </layout>
+ </widget>
+ <resources/>
+ <connections/>
+</ui>

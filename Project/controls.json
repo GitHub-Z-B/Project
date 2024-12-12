@@ -1,0 +1,1091 @@
+{
+    "controls": [
+        {
+            "buttonId": 101001,
+            "ControlName": "尺寸（数字）"
+        },
+        {
+            "buttonId": 101002,
+            "ControlName": "14mm"
+        },
+        {
+            "buttonId": 101003,
+            "ControlName": "16mm"
+        },
+        {
+            "buttonId": 101004,
+            "ControlName": "18mm"
+        },
+        {
+            "buttonId": 101005,
+            "ControlName": "20mm"
+        },
+		{
+            "buttonId": 101006,
+            "ControlName": "22mm"
+        },
+		{
+            "buttonId": 101007,
+            "ControlName": "24mm"
+        },
+		{
+            "buttonId": 101008,
+            "ControlName": "开始试验"
+        },
+		{
+            "buttonId": 101009,
+            "ControlName": "完成"
+        },
+		{
+            "buttonId": 101010,
+            "ControlName": "返回"
+        },
+{
+            "buttonId": 103008,
+            "ControlName": "返回"
+        },
+{
+            "buttonId": 105008,
+            "ControlName": "返回"
+        },
+
+
+{
+            "buttonId": 101010,
+            "ControlName": "返回"
+        },
+
+		{
+            "buttonId": 102001,
+            "ControlName": "尺寸（全键盘）"
+        },
+        {
+            "buttonId": 102002,
+            "ControlName": "14mm"
+        },
+        {
+            "buttonId": 102003,
+            "ControlName": "16mm"
+        },
+        {
+            "buttonId": 102004,
+            "ControlName": "18mm"
+        },
+        {
+            "buttonId": 102005,
+            "ControlName": "20mm"
+        },
+		{
+            "buttonId": 102006,
+            "ControlName": "22mm"
+        },
+		{
+            "buttonId": 102007,
+            "ControlName": "24mm"
+        },
+		{
+            "buttonId": 102008,
+            "ControlName": "开始试验"
+        },
+		{
+            "buttonId": 102009,
+            "ControlName": "完成"
+        },
+		{
+            "buttonId": 102010,
+            "ControlName": "返回"
+        },
+		{
+            "buttonId": 103001,
+            "ControlName": "反馈样式（菜单）"
+        },
+        {
+            "buttonId": 103002,
+            "ControlName": "无样式"
+        },
+        {
+            "buttonId": 103003,
+            "ControlName": "加框样式"
+        },
+        {
+            "buttonId": 103004,
+            "ControlName": "变色样式"
+        },
+        {
+            "buttonId": 103005,
+            "ControlName": "立体样式"
+        },
+		{
+            "buttonId": 103006,
+            "ControlName": "开始试验"
+        },
+		{
+            "buttonId": 103007,
+            "ControlName": "完成"
+        },
+		{
+            "buttonId": 104001,
+            "ControlName": "喜好测验"
+        },
+        {
+            "buttonId": 104002,
+            "ControlName": "加框样式"
+        },
+        {
+            "buttonId": 104003,
+            "ControlName": "变色样式"
+        },
+        {
+            "buttonId": 104004,
+            "ControlName": "立体样式"
+        },
+		{
+            "buttonId": 104005,
+            "ControlName": "开始试验"
+        },
+		{
+            "buttonId": 104006,
+            "ControlName": "完成"
+        },
+		{
+            "buttonId": 104007,
+            "ControlName": "返回"
+        },
+		{
+            "buttonId": 105001,
+            "ControlName": "反馈样式（数字）"
+        },
+        {
+            "buttonId": 105002,
+            "ControlName": "无样式"
+        },
+        {
+            "buttonId": 105003,
+            "ControlName": "加框样式"
+        },
+        {
+            "buttonId": 105004,
+            "ControlName": "变色样式"
+        },
+        {
+            "buttonId": 105005,
+            "ControlName": "立体样式"
+        },
+		{
+            "buttonId": 105006,
+            "ControlName": "开始试验"
+        },
+		{
+            "buttonId": 105007,
+            "ControlName": "完成"
+        },
+		{
+            "buttonId": 106001,
+            "ControlName": "喜好测验"
+        },
+        {
+            "buttonId": 106002,
+            "ControlName": "加框样式"
+        },
+        {
+            "buttonId": 106003,
+            "ControlName": "变色样式"
+        },
+        {
+            "buttonId": 106004,
+            "ControlName": "立体样式"
+        },
+		{
+            "buttonId": 106005,
+            "ControlName": "开始试验"
+        },
+		{
+            "buttonId": 106006,
+            "ControlName": "完成"
+        },
+		{
+            "buttonId": 106007,
+            "ControlName": "返回"
+        },
+		{
+            "buttonId": 107001,
+            "ControlName": "按键操作时间"
+        },
+		{
+            "buttonId": 107002,
+            "ControlName": "开始试验"
+        },
+		{
+            "buttonId": 107003,
+            "ControlName": "完成"
+        },
+		{
+            "buttonId": 107004,
+            "ControlName": "返回"
+        },
+		{
+            "buttonId": 108001,
+            "ControlName": "双击按键逻辑"
+        },
+		{
+            "buttonId": 108002,
+            "ControlName": "开始试验"
+        },
+		{
+            "buttonId": 108003,
+            "ControlName": "完成"
+        },
+		{
+            "buttonId": 108004,
+            "ControlName": "返回"
+        },
+		{
+            "buttonId": 109001,
+            "ControlName": "单击按键逻辑"
+        },
+		{
+            "buttonId": 109002,
+            "ControlName": "无机制"
+        },
+		{
+            "buttonId": 109003,
+            "ControlName": "0.02s防误触"
+        },
+		{
+            "buttonId": 109004,
+            "ControlName": "0.04s防误触"
+        },
+		{
+            "buttonId": 109005,
+            "ControlName": "0.06s防误触"
+        },
+		{
+            "buttonId": 109006,
+            "ControlName": "0.08s防误触"
+        },
+		{
+            "buttonId": 109007,
+            "ControlName": "0.1s防误触"
+        },
+		{
+            "buttonId": 109008,
+            "ControlName": "开始试验"
+        },
+		{
+            "buttonId": 109009,
+            "ControlName": "完成"
+        },
+		{
+            "buttonId": 109010,
+            "ControlName": "返回"
+        },
+		{
+            "buttonId": 201001,
+            "ControlName": "人机工效"
+        },
+		{
+            "buttonId": 201002,
+            "ControlName": "人机交互"
+        },
+		{
+            "buttonId": 201003,
+            "ControlName": "人机综合"
+        },
+		{
+            "buttonId": 201004,
+            "ControlName": "人机融合"
+        },
+		{
+            "buttonId": 201005,
+            "ControlName": "人机共进"
+        },
+		{
+            "buttonId": 201006,
+            "ControlName": "操作程序"
+        },
+		{
+            "buttonId": 201007,
+            "ControlName": "作业程序"
+        },
+		{
+            "buttonId": 201008,
+            "ControlName": "交互逻辑"
+        },
+		{
+            "buttonId": 201009,
+            "ControlName": "交互接口"
+        },
+		{
+            "buttonId": 201010,
+            "ControlName": "操作场景"
+        },
+		{
+            "buttonId": 201011,
+            "ControlName": "界面架构"
+        },
+		{
+            "buttonId": 201012,
+            "ControlName": "界面布局"
+        },
+		{
+            "buttonId": 201013,
+            "ControlName": "界面层级"
+        },
+		{
+            "buttonId": 201014,
+            "ControlName": "交互控件"
+        },
+		{
+            "buttonId": 201015,
+            "ControlName": "界面元素"
+        },
+		{
+            "buttonId": 201016,
+            "ControlName": "座舱视野"
+        },
+		{
+            "buttonId": 201017,
+            "ControlName": "座舱空间"
+        },
+		{
+            "buttonId": 201018,
+            "ControlName": "工业设计"
+        },
+		{
+            "buttonId": 201019,
+            "ControlName": "空间布局"
+        },
+		{
+            "buttonId": 201020,
+            "ControlName": "座舱设备"
+        },
+		{
+            "buttonId": 201021,
+            "ControlName": "可视可达"
+        },
+		{
+            "buttonId": 201022,
+            "ControlName": "作业绩效"
+        },
+		{
+            "buttonId": 201023,
+            "ControlName": "用户体验"
+        },
+		{
+            "buttonId": 201024,
+            "ControlName": "感官质量"
+        },
+		{
+            "buttonId": 201025,
+            "ControlName": "作业负荷"
+        },
+		{
+            "buttonId": 202001,
+            "ControlName": "1"
+        },
+		{
+            "buttonId": 202002,
+            "ControlName": "2"
+        },
+		{
+            "buttonId": 202003,
+            "ControlName": "3"
+        },
+		{
+            "buttonId": 202004,
+            "ControlName": "4"
+        },
+		{
+            "buttonId": 202005,
+            "ControlName": "5"
+        },
+		{
+            "buttonId": 202006,
+            "ControlName": "6"
+        },
+		{
+            "buttonId": 202007,
+            "ControlName": "7"
+        },
+		{
+            "buttonId": 202008,
+            "ControlName": "8"
+        },
+		{
+            "buttonId": 202009,
+            "ControlName": "9"
+        },
+		{
+            "buttonId": 202010,
+            "ControlName": "0"
+        },
+		{
+            "buttonId": 202011,
+            "ControlName": "."
+        },
+		{
+            "buttonId": 202012,
+            "ControlName": "X"
+        },
+		{
+            "buttonId": 202013,
+            "ControlName": "确认"
+        },
+		{
+            "buttonId": 202014,
+            "ControlName": "取消"
+        },
+		{
+            "buttonId": 202101,
+            "ControlName": "1"
+        },
+		{
+            "buttonId": 202102,
+            "ControlName": "2"
+        },
+		{
+            "buttonId": 202103,
+            "ControlName": "3"
+        },
+		{
+            "buttonId": 202104,
+            "ControlName": "4"
+        },
+		{
+            "buttonId": 202105,
+            "ControlName": "5"
+        },
+		{
+            "buttonId": 202106,
+            "ControlName": "6"
+        },
+		{
+            "buttonId": 202107,
+            "ControlName": "7"
+        },
+		{
+            "buttonId": 202108,
+            "ControlName": "8"
+        },
+		{
+            "buttonId": 202109,
+            "ControlName": "9"
+        },
+		{
+            "buttonId": 202110,
+            "ControlName": "0"
+        },
+		{
+            "buttonId": 202111,
+            "ControlName": "."
+        },
+		{
+            "buttonId": 202112,
+            "ControlName": "X"
+        },
+		{
+            "buttonId": 202113,
+            "ControlName": "确认"
+        },
+		{
+            "buttonId": 202114,
+            "ControlName": "取消"
+        },
+		{
+            "buttonId": 202201,
+            "ControlName": "1"
+        },
+		{
+            "buttonId": 202202,
+            "ControlName": "2"
+        },
+		{
+            "buttonId": 202203,
+            "ControlName": "3"
+        },
+		{
+            "buttonId": 202204,
+            "ControlName": "4"
+        },
+		{
+            "buttonId": 202205,
+            "ControlName": "5"
+        },
+		{
+            "buttonId": 202206,
+            "ControlName": "6"
+        },
+		{
+            "buttonId": 202207,
+            "ControlName": "7"
+        },
+		{
+            "buttonId": 202208,
+            "ControlName": "8"
+        },
+		{
+            "buttonId": 202209,
+            "ControlName": "9"
+        },
+		{
+            "buttonId": 202210,
+            "ControlName": "0"
+        },
+		{
+            "buttonId": 202211,
+            "ControlName": "."
+        },
+		{
+            "buttonId": 202212,
+            "ControlName": "X"
+        },
+		{
+            "buttonId": 202213,
+            "ControlName": "确认"
+        },
+		{
+            "buttonId": 202214,
+            "ControlName": "取消"
+        },
+		{
+            "buttonId": 202301,
+            "ControlName": "1"
+        },
+		{
+            "buttonId": 202302,
+            "ControlName": "2"
+        },
+		{
+            "buttonId": 202303,
+            "ControlName": "3"
+        },
+		{
+            "buttonId": 202304,
+            "ControlName": "4"
+        },
+		{
+            "buttonId": 202305,
+            "ControlName": "5"
+        },
+		{
+            "buttonId": 202306,
+            "ControlName": "6"
+        },
+		{
+            "buttonId": 202307,
+            "ControlName": "7"
+        },
+		{
+            "buttonId": 202308,
+            "ControlName": "8"
+        },
+		{
+            "buttonId": 202309,
+            "ControlName": "9"
+        },
+		{
+            "buttonId": 202310,
+            "ControlName": "0"
+        },
+		{
+            "buttonId": 202311,
+            "ControlName": "."
+        },
+		{
+            "buttonId": 202312,
+            "ControlName": "X"
+        },
+		{
+            "buttonId": 202313,
+            "ControlName": "确认"
+        },
+		{
+            "buttonId": 202314,
+            "ControlName": "取消"
+        },
+		{
+            "buttonId": 202401,
+            "ControlName": "1"
+        },
+		{
+            "buttonId": 202402,
+            "ControlName": "2"
+        },
+		{
+            "buttonId": 202403,
+            "ControlName": "3"
+        },
+		{
+            "buttonId": 202404,
+            "ControlName": "4"
+        },
+		{
+            "buttonId": 202405,
+            "ControlName": "5"
+        },
+		{
+            "buttonId": 202406,
+            "ControlName": "6"
+        },
+		{
+            "buttonId": 202407,
+            "ControlName": "7"
+        },
+		{
+            "buttonId": 202408,
+            "ControlName": "8"
+        },
+		{
+            "buttonId": 202409,
+            "ControlName": "9"
+        },
+		{
+            "buttonId": 202410,
+            "ControlName": "0"
+        },
+		{
+            "buttonId": 202411,
+            "ControlName": "."
+        },
+		{
+            "buttonId": 202412,
+            "ControlName": "X"
+        },
+		{
+            "buttonId": 202413,
+            "ControlName": "确认"
+        },
+		{
+            "buttonId": 202414,
+            "ControlName": "取消"
+        },
+		{
+            "buttonId": 203001,
+            "ControlName": "A"
+        },
+		{
+            "buttonId": 203002,
+            "ControlName": "B"
+        },
+		{
+            "buttonId": 203003,
+            "ControlName": "C"
+        },
+		{
+            "buttonId": 203004,
+            "ControlName": "D"
+        },
+		{
+            "buttonId": 203005,
+            "ControlName": "E"
+        },
+		{
+            "buttonId": 203006,
+            "ControlName": "F"
+        },
+		{
+            "buttonId": 203007,
+            "ControlName": "G"
+        },
+		{
+            "buttonId": 203008,
+            "ControlName": "H"
+        },
+		{
+            "buttonId": 203009,
+            "ControlName": "I"
+        },
+		{
+            "buttonId": 203010,
+            "ControlName": "J"
+        },
+		{
+            "buttonId": 203011,
+            "ControlName": "K"
+        },
+		{
+            "buttonId": 203012,
+            "ControlName": "L"
+        },
+		{
+            "buttonId": 203013,
+            "ControlName": "M"
+        },
+		{
+            "buttonId": 203014,
+            "ControlName": "N"
+        },
+		{
+            "buttonId": 203015,
+            "ControlName": "O"
+        },
+		{
+            "buttonId": 203016,
+            "ControlName": "P"
+        },
+		{
+            "buttonId": 203017,
+            "ControlName": "Q"
+        },
+		{
+            "buttonId": 203018,
+            "ControlName": "R"
+        },
+		{
+            "buttonId": 203019,
+            "ControlName": "S"
+        },
+		{
+            "buttonId": 203020,
+            "ControlName": "T"
+        },
+		{
+            "buttonId": 203021,
+            "ControlName": "U"
+        },
+		{
+            "buttonId": 203022,
+            "ControlName": "V"
+        },
+		{
+            "buttonId": 203023,
+            "ControlName": "W"
+        },
+		{
+            "buttonId": 203024,
+            "ControlName": "X"
+        },
+		{
+            "buttonId": 203025,
+            "ControlName": "Y"
+        },
+		{
+            "buttonId": 203026,
+            "ControlName": "Z"
+        },
+		{
+            "buttonId": 204001,
+            "ControlName": "1"
+        },
+		{
+            "buttonId": 204002,
+            "ControlName": "2"
+        },
+		{
+            "buttonId": 204003,
+            "ControlName": "3"
+        },
+		{
+            "buttonId": 204004,
+            "ControlName": "4"
+        },
+		{
+            "buttonId": 204101,
+            "ControlName": "人机工效"
+        },
+		{
+            "buttonId": 204102,
+            "ControlName": "人机交互"
+        },
+		{
+            "buttonId": 204103,
+            "ControlName": "人机综合"
+        },
+		{
+            "buttonId": 204104,
+            "ControlName": "操作程序"
+        },
+		{
+            "buttonId": 204105,
+            "ControlName": "作业程序"
+        },
+		{
+            "buttonId": 204106,
+            "ControlName": "交互逻辑"
+        },
+		{
+            "buttonId": 204107,
+            "ControlName": "界面架构"
+        },
+		{
+            "buttonId": 204108,
+            "ControlName": "界面布局"
+        },
+		{
+            "buttonId": 204109,
+            "ControlName": "界面层级"
+        },
+		{
+            "buttonId": 204110,
+            "ControlName": "座舱视野"
+        },
+		{
+            "buttonId": 204111,
+            "ControlName": "座舱空间"
+        },
+		{
+            "buttonId": 204112,
+            "ControlName": "工业设计"
+        },
+		{
+            "buttonId": 204113,
+            "ControlName": "可视可达"
+        },
+		{
+            "buttonId": 204114,
+            "ControlName": "作业绩效"
+        },
+		{
+            "buttonId": 204115,
+            "ControlName": "用户体验"
+        },
+		{
+            "buttonId": 204201,
+            "ControlName": "人机工效"
+        },
+		{
+            "buttonId": 204202,
+            "ControlName": "人机交互"
+        },
+		{
+            "buttonId": 204203,
+            "ControlName": "人机综合"
+        },
+		{
+            "buttonId": 204204,
+            "ControlName": "操作程序"
+        },
+		{
+            "buttonId": 204205,
+            "ControlName": "作业程序"
+        },
+		{
+            "buttonId": 204206,
+            "ControlName": "交互逻辑"
+        },
+		{
+            "buttonId": 204207,
+            "ControlName": "界面架构"
+        },
+		{
+            "buttonId": 204208,
+            "ControlName": "界面布局"
+        },
+		{
+            "buttonId": 204209,
+            "ControlName": "界面层级"
+        },
+		{
+            "buttonId": 204210,
+            "ControlName": "座舱视野"
+        },
+		{
+            "buttonId": 204211,
+            "ControlName": "座舱空间"
+        },
+		{
+            "buttonId": 204212,
+            "ControlName": "工业设计"
+        },
+		{
+            "buttonId": 204213,
+            "ControlName": "可视可达"
+        },
+		{
+            "buttonId": 204214,
+            "ControlName": "作业绩效"
+        },
+		{
+            "buttonId": 204215,
+            "ControlName": "用户体验"
+        },
+		{
+            "buttonId": 204301,
+            "ControlName": "人机工效"
+        },
+		{
+            "buttonId": 204302,
+            "ControlName": "人机交互"
+        },
+		{
+            "buttonId": 204303,
+            "ControlName": "人机综合"
+        },
+		{
+            "buttonId": 204304,
+            "ControlName": "操作程序"
+        },
+		{
+            "buttonId": 204305,
+            "ControlName": "作业程序"
+        },
+		{
+            "buttonId": 204306,
+            "ControlName": "交互逻辑"
+        },
+		{
+            "buttonId": 204307,
+            "ControlName": "界面架构"
+        },
+		{
+            "buttonId": 204308,
+            "ControlName": "界面布局"
+        },
+		{
+            "buttonId": 204309,
+            "ControlName": "界面层级"
+        },
+		{
+            "buttonId": 204310,
+            "ControlName": "座舱视野"
+        },
+		{
+            "buttonId": 204311,
+            "ControlName": "座舱空间"
+        },
+		{
+            "buttonId": 204312,
+            "ControlName": "工业设计"
+        },
+		{
+            "buttonId": 204313,
+            "ControlName": "可视可达"
+        },
+		{
+            "buttonId": 204314,
+            "ControlName": "作业绩效"
+        },
+		{
+            "buttonId": 204315,
+            "ControlName": "用户体验"
+        },
+		{
+            "buttonId": 204401,
+            "ControlName": "人机工效"
+        },
+		{
+            "buttonId": 204402,
+            "ControlName": "人机交互"
+        },
+		{
+            "buttonId": 204403,
+            "ControlName": "人机综合"
+        },
+		{
+            "buttonId": 204404,
+            "ControlName": "操作程序"
+        },
+		{
+            "buttonId": 204405,
+            "ControlName": "作业程序"
+        },
+		{
+            "buttonId": 204406,
+            "ControlName": "交互逻辑"
+        },
+		{
+            "buttonId": 204407,
+            "ControlName": "界面架构"
+        },
+		{
+            "buttonId": 204408,
+            "ControlName": "界面布局"
+        },
+		{
+            "buttonId": 204409,
+            "ControlName": "界面层级"
+        },
+		{
+            "buttonId": 204410,
+            "ControlName": "座舱视野"
+        },
+		{
+            "buttonId": 204411,
+            "ControlName": "座舱空间"
+        },
+		{
+            "buttonId": 204412,
+            "ControlName": "工业设计"
+        },
+		{
+            "buttonId": 204413,
+            "ControlName": "可视可达"
+        },
+		{
+            "buttonId": 204414,
+            "ControlName": "作业绩效"
+        },
+		{
+            "buttonId": 204415,
+            "ControlName": "用户体验"
+        },
+		{
+            "buttonId": 205001,
+            "ControlName": "1"
+        },
+		{
+            "buttonId": 205002,
+            "ControlName": "2"
+        },
+		{
+            "buttonId": 205003,
+            "ControlName": "3"
+        },
+		{
+            "buttonId": 205004,
+            "ControlName": "4"
+        },
+		{
+            "buttonId": 206001,
+            "ControlName": "短按按键"
+        },
+		{
+            "buttonId": 206002,
+            "ControlName": "长按按键"
+        },
+		{
+            "buttonId": 206003,
+            "ControlName": "双击按键"
+        },
+		{
+            "buttonId": 207001,
+            "ControlName": "按键1"
+        },
+		{
+            "buttonId": 207002,
+            "ControlName": "按键2"
+        },
+		{
+            "buttonId": 207003,
+            "ControlName": "按键3"
+        },
+		{
+            "buttonId": 207004,
+            "ControlName": "按键4"
+        },
+		{
+            "buttonId": 207005,
+            "ControlName": "按键5"
+        },
+		{
+            "buttonId": 207006,
+            "ControlName": "按键6"
+        },
+		{
+            "buttonId": 207007,
+            "ControlName": "按键7"
+        },
+		{
+            "buttonId": 207008,
+            "ControlName": "按键8"
+        },
+		{
+            "buttonId": 207009,
+            "ControlName": "按键9"
+        },
+		{
+            "buttonId": 207010,
+            "ControlName": "按键10"
+        }
+    ]
+}

@@ -1,0 +1,119 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>EventTargetDialog</class>
+ <widget class="QDialog" name="EventTargetDialog">
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>825</width>
+    <height>812</height>
+   </rect>
+  </property>
+  <property name="windowTitle">
+   <string>Dialog</string>
+  </property>
+  <widget class="QPushButton" name="pushButton_OK">
+   <property name="geometry">
+    <rect>
+     <x>280</x>
+     <y>740</y>
+     <width>80</width>
+     <height>32</height>
+    </rect>
+   </property>
+   <property name="font">
+    <font>
+     <pointsize>-1</pointsize>
+     <weight>50</weight>
+     <bold>false</bold>
+    </font>
+   </property>
+   <property name="styleSheet">
+    <string notr="true">left: 0px;
+top: 0px;
+width: 80px;
+height: 32px;
+opacity: 1;
+border-radius: 4px;
+
+border: 1px solid rgba(59, 153, 252, 1);
+left: 0px;
+top: 0px;
+width: 80px;
+height: 32px;
+opacity: 1;
+/** 文本1 */
+font-size: 14px;
+font-weight: 400;
+letter-spacing: 0px;
+line-height: 18.48px;
+color: rgba(59, 153, 252, 1);
+text-align: center;
+vertical-align: middle;
+
+</string>
+   </property>
+   <property name="text">
+    <string>确定</string>
+   </property>
+  </widget>
+  <widget class="QPushButton" name="pushButton_Cancel">
+   <property name="geometry">
+    <rect>
+     <x>400</x>
+     <y>740</y>
+     <width>80</width>
+     <height>32</height>
+    </rect>
+   </property>
+   <property name="font">
+    <font>
+     <pointsize>-1</pointsize>
+     <weight>50</weight>
+     <bold>false</bold>
+    </font>
+   </property>
+   <property name="styleSheet">
+    <string notr="true">left: 0px;
+top: 0px;
+width: 80px;
+height: 32px;
+opacity: 1;
+border-radius: 4px;
+
+border: 1px solid rgba(59, 153, 252, 1);
+left: 0px;
+top: 0px;
+width: 80px;
+height: 32px;
+opacity: 1;
+/** 文本1 */
+font-size: 14px;
+font-weight: 400;
+letter-spacing: 0px;
+line-height: 18.48px;
+color: rgba(59, 153, 252, 1);
+text-align: center;
+vertical-align: middle;
+
+</string>
+   </property>
+   <property name="text">
+    <string>取消</string>
+   </property>
+  </widget>
+  <widget class="QWidget" name="widget" native="true">
+   <property name="geometry">
+    <rect>
+     <x>20</x>
+     <y>10</y>
+     <width>791</width>
+     <height>711</height>
+    </rect>
+   </property>
+  </widget>
+ </widget>
+ <resources/>
+ <connections/>
+</ui>
