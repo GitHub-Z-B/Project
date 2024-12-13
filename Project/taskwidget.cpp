@@ -392,7 +392,15 @@ void TaskWidget::on_add_task_clicked()
 
 void TaskWidget::on_buttonReturn_clicked()
 {
-    ui->stack_widget->setCurrentIndex(0);
+    if(return_page_flag==MainWindow_CreateTask)
+    {
+        ui->stack_widget->setCurrentIndex(4);
+    }
+    else
+    {
+        ui->stack_widget->setCurrentIndex(0);
+    }
+
 }
 
 QString TaskWidget::type_string()
@@ -547,7 +555,7 @@ void TaskWidget::on_buttonSave_clicked()
             EventItem* eventItem = qobject_cast<EventItem*>(widget);
             if (eventItem)
             {
-                timeStrList.append(eventItem->getTime());
+                timeStrList.append(eventItem->getTime());//eventitem类已经判断好了，只要第一个的时间
             }
         }
     }
@@ -1277,6 +1285,10 @@ void TaskWidget::on_return_Task_btn_clicked()
     {
         ui->stack_widget->setCurrentIndex(0);
     }
+    else if(return_page_flag==MainWindow_CreateTask)
+    {
+        ui->stack_widget->setCurrentIndex(4);
+    }
 
 }
 
@@ -1318,4 +1330,41 @@ void TaskWidget::on_task_Combox_currentTextChanged(const QString &arg1)
     qDebug()<<"exepos"<<ExePos;
 }
 
+
+
+void TaskWidget::on_create_task_clicked()
+{
+    return_page_flag=MainWindow_CreateTask;
+    ui->task_name->clear();
+    ui->task_description->clear();
+    ui->checkBox_type_left->setChecked(false);
+
+    while (QLayoutItem* item = ui->layout_question->takeAt(0)) {
+        if (QWidget* widget = item->widget()) {
+            widget->deleteLater();
+        }
+        delete item;
+    }
+    ui->layout_question->addStretch();
+    while (QLayoutItem* item = ui->layout_Screen->takeAt(0)) {
+        if (QWidget* widget = item->widget()) {
+            widget->deleteLater();
+        }
+        delete item;
+    }
+    ui->layout_Screen->addStretch();
+
+    while (QLayoutItem* item = ui->layout_event->takeAt(0)) {
+        if (QWidget* widget = item->widget()) {
+            widget->deleteLater();
+        }
+        delete item;
+    }
+    ui->layout_event->addStretch();
+
+    ui->buttonSave->show();
+    ui->finish_edit->hide();
+
+    ui->stack_widget->setCurrentIndex(1);
+}
 

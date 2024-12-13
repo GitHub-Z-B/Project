@@ -39,7 +39,8 @@ public:
     enum page
     {
         MainWindow_Title,
-        TaskWidget_Edit
+        TaskWidget_Edit,
+        MainWindow_CreateTask
 
     };
 
@@ -117,6 +118,8 @@ private slots:
 
 
 
+
+    void on_create_task_clicked();
 
 signals:
     void closeExe();

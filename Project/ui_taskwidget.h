@@ -252,6 +252,7 @@ public:
     QLabel *label_task_name;
     QComboBox *task_Combox;
     QPushButton *TaskConfig;
+    QPushButton *create_task;
     QSpacerItem *horizontalSpacer_29;
     QLabel *label_task_type;
     QComboBox *exePath_comboBox;
@@ -417,8 +418,8 @@ public:
         dateEdit->setReadOnly(false);
         dateEdit->setButtonSymbols(QAbstractSpinBox::ButtonSymbols::NoButtons);
         dateEdit->setKeyboardTracking(false);
-        dateEdit->setDateTime(QDateTime(QDate(1999, 12, 10), QTime(0, 0, 0)));
-        dateEdit->setMinimumDateTime(QDateTime(QDate(1999, 12, 10), QTime(0, 0, 0)));
+        dateEdit->setDateTime(QDateTime(QDate(1999, 12, 9), QTime(8, 0, 0)));
+        dateEdit->setMinimumDateTime(QDateTime(QDate(1999, 12, 9), QTime(8, 0, 0)));
 
         _1->addWidget(dateEdit);
 
@@ -434,8 +435,8 @@ public:
         dateEdit_2->setReadOnly(false);
         dateEdit_2->setButtonSymbols(QAbstractSpinBox::ButtonSymbols::NoButtons);
         dateEdit_2->setKeyboardTracking(false);
-        dateEdit_2->setDateTime(QDateTime(QDate(1999, 12, 10), QTime(0, 0, 0)));
-        dateEdit_2->setMinimumDateTime(QDateTime(QDate(1999, 12, 10), QTime(0, 0, 0)));
+        dateEdit_2->setDateTime(QDateTime(QDate(1999, 12, 9), QTime(8, 0, 0)));
+        dateEdit_2->setMinimumDateTime(QDateTime(QDate(1999, 12, 9), QTime(8, 0, 0)));
 
         _1->addWidget(dateEdit_2);
 
@@ -501,7 +502,7 @@ public:
         scrollArea->setWidgetResizable(true);
         taskListWidget = new QWidget();
         taskListWidget->setObjectName("taskListWidget");
-        taskListWidget->setGeometry(QRect(0, 0, 1210, 577));
+        taskListWidget->setGeometry(QRect(0, 0, 65, 18));
         taskListWidget->setStyleSheet(QString::fromUtf8("QWidget#taskListWidget{\n"
 "background-color: rgb(255, 255, 255);\n"
 "}"));
@@ -1355,6 +1356,11 @@ public:
 
         horizontalLayout_15->addWidget(TaskConfig);
 
+        create_task = new QPushButton(widget_13);
+        create_task->setObjectName("create_task");
+
+        horizontalLayout_15->addWidget(create_task);
+
         horizontalSpacer_29 = new QSpacerItem(36, 20, QSizePolicy::Policy::Fixed, QSizePolicy::Policy::Minimum);
 
         horizontalLayout_15->addItem(horizontalSpacer_29);
@@ -1610,6 +1616,7 @@ public:
         label_18->setText(QCoreApplication::translate("TaskWidget", "\344\273\273\345\212\241\351\200\211\346\213\251\357\274\232", nullptr));
         label_task_name->setText(QString());
         TaskConfig->setText(QCoreApplication::translate("TaskWidget", "\344\273\273\345\212\241\351\205\215\347\275\256", nullptr));
+        create_task->setText(QCoreApplication::translate("TaskWidget", "\346\226\260\345\273\272\344\273\273\345\212\241", nullptr));
         label_task_type->setText(QString());
         SetPosition_btn_2->setText(QCoreApplication::translate("TaskWidget", "\346\211\223\345\274\200\347\224\273\351\235\242", nullptr));
         CloseExe_btn_1->setText(QCoreApplication::translate("TaskWidget", "\345\205\263\351\227\255\347\224\273\351\235\242", nullptr));
