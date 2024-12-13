@@ -18,6 +18,7 @@ SOURCES += \
     evaluatewidget.cpp \
     eventchilditem.cpp \
     eventitem.cpp \
+    experimentaldata.cpp \
     main.cpp \
     mainwindow.cpp \
     questionitem.cpp \
@@ -47,6 +48,7 @@ HEADERS += \
     evaluatewidget.h \
     eventchilditem.h \
     eventitem.h \
+    experimentaldata.h \
     icd.h \
     mainwindow.h \
     packet.h \

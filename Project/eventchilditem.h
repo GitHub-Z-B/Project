@@ -15,6 +15,7 @@ public:
     explicit EventChildItem(QWidget *parent = nullptr);
     ~EventChildItem();
     void set_trigger_event(int id);
+    void setTriggerTime(QString time);
     int trigger_event();
     void setItemReadonly();
     QString getTime();
@@ -25,6 +26,9 @@ private:
     int minute=0;
     int second=0;
     QString timeString;
+    void onSecondChanged(int value);
+    void onMinuteChanged(int value);
+    void onHourChanged(int value);
 private slots:
     void on_pushButton_clicked();
     void on_delete_btn_clicked();

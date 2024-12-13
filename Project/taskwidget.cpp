@@ -19,6 +19,9 @@ TaskWidget::TaskWidget(QWidget *parent) :
     ui(new Ui::TaskWidget)
 {
     ui->setupUi(this);
+    ui->task_finish->setEnabled(false);
+    ui->task_return->setVisible(false);
+    ui->return_btn->setVisible(false);
     ui->port_Edit->setText("54321");
     ui->ip_Edit->setText("239.0.0.1");
     receivingEnabled=true;
@@ -104,6 +107,43 @@ void TaskWidget::init()
     }
 }
 
+QString TaskWidget::TriggerTime()
+{
+    Trigger_TimeList.clear();
+    for(int i=0; i<ui->layout_event->count(); i++)
+    {
+        QLayoutItem* item = ui->layout_event->itemAt(i);
+        if (!item) continue;
+
+        QWidget* widget = item->widget();
+        if (widget)
+        {
+            EventItem* eventItem = qobject_cast<EventItem*>(widget);
+            if (eventItem)
+            {
+                Trigger_TimeList.append(eventItem->getTimeList());//eventitem类已经判断好了
+            }
+        }
+    }
+    qDebug()<<"Trigger_TimeList--:"<<Trigger_TimeList;
+    QStringList timeStrList; // 用于存储处理后的时间字符串
+
+    for (int i = 0; i < Trigger_TimeList.size(); i++) {
+        QStringList timeStr = Trigger_TimeList[i].split(","); // 拆分每个元素中的时间
+        QString formattedTime;
+        for (int j = 0; j < timeStr.size(); j++) {
+            formattedTime += timeStr[j].trimmed(); // 移除可能存在的空白字符
+            // 在时间之间添加分隔符，除了最后一个时间
+            if (j < timeStr.size() - 1) {
+                formattedTime += "-";
+            }
+        }
+        timeStrList << formattedTime; // 将格式化后的时间字符串添加到列表中
+    }
+
+    return timeStrList.join(","); // 将 timeStrList 中的所有元素连接成一个单一的字符串
+}
+
 void TaskWidget::task_start()
 {
     //TODO: 提示先关闭上一个任务 然后才能开启新任务
@@ -153,6 +193,9 @@ void TaskWidget::task_edit()
         taskListItem->set_trigger_event(query.value(9).toString());
         taskListItem->setPos_X_Y(query.value(10).toString());
         taskListItem->setJL(query.value(11).toString());
+        qDebug()<<"Trigger_Time"<<query.value(12).toString();
+        taskListItem->setTrigger_Time(query.value(12).toString());
+
     }
 
     ui->task_name->setText(taskListItem->task_name());
@@ -207,7 +250,7 @@ void TaskWidget::task_edit()
     m_exePath = taskListItem->task_path();
     m_pos=taskListItem->getPos_X_Y();
     ui->JLList_Combox->setCurrentText(taskListItem->JL());
-    qDebug()<<"exepath:"<<m_exePath<<"pos:"<<m_pos;
+ //   qDebug()<<"exepath:"<<m_exePath<<"pos:"<<m_pos;
     QStringList exeList = m_exePath.split(',');
     QStringList posList = m_pos.split(',');
     if(exeList.at(0)!="")
@@ -253,12 +296,16 @@ void TaskWidget::task_edit()
 
     QStringList task_event_list = taskListItem->task_event().split(',');
     QStringList trigger_event_list = taskListItem->trigger_event().split(',');
+    QString triggerTime= taskListItem->getTrigger_Time();//一整条的时间00:00:00-00:06:00-00:00:0000:00:00-00:07:00-00:00:00
+    QStringList triggerTimeList=triggerTime.split(",");
+
     for(int i=0; i<task_event_list.size(); i++)
     {
         EventItem *eventItem = new EventItem;
         connect(this,&TaskWidget::getTriggerTime,eventItem,&EventItem::getTriggerTime);
         eventItem->set_task_event(task_event_list.at(i));
-        eventItem->set_trigger_event(trigger_event_list.at(i));
+        eventItem->setTimeString(triggerTimeList[i]);
+        eventItem->set_trigger_event(trigger_event_list[i]);
         ui->layout_event->insertWidget(1 + m_event_item_count, eventItem);
         m_event_item_count++;
     }
@@ -290,6 +337,11 @@ void TaskWidget::task_delete()
     }
 
     taskListItem->deleteLater();
+    QSqlQuery query;
+    query.prepare("delete from task where task_name=:taskname");
+    query.bindValue(":taskname",taskListItem->task_name());
+    query.exec();
+
 }
 
 void TaskWidget::initUserComboxAndTaskCombox()
@@ -321,8 +373,8 @@ void TaskWidget::initUserComboxAndTaskCombox()
     query.next();
 
     exePath=query.value(0).toString().split(",");
-   // ExePathList=exePath;
-  //  qDebug()<<"exePath"<<exePath;
+    // ExePathList=exePath;
+    //  qDebug()<<"exePath"<<exePath;
     ui->exePath_comboBox->clear();
     ui->exePath_comboBox->addItems(exePath);
 
@@ -335,8 +387,8 @@ void TaskWidget::initUserComboxAndTaskCombox()
     }
     query.next();
     ExePos=query.value(0).toString().split(",");
-    qDebug()<<"exePath"<<exePath;
-    qDebug()<<"exepos"<<ExePos;
+  //  qDebug()<<"exePath"<<exePath;
+  //  qDebug()<<"exepos"<<ExePos;
 
 
 
@@ -453,7 +505,7 @@ QString TaskWidget::type_string()
 
 void TaskWidget::on_buttonSave_clicked()
 {
-
+    Trigger_TimeList.clear();
     ScreenImportItemInfo *s_ScreenImportItemInfo =new ScreenImportItemInfo;
     // 假设 layout_Screen 是一个 QLayout 指针，指向你想要打印内容的布局
 
@@ -543,23 +595,8 @@ void TaskWidget::on_buttonSave_clicked()
         }
     }
     emit getTriggerTime();
-    QStringList timeStrList;
-    for(int i=0; i<ui->layout_event->count(); i++)
-    {
-        QLayoutItem* item = ui->layout_event->itemAt(i);
-        if (!item) continue;
 
-        QWidget* widget = item->widget();
-        if (widget)
-        {
-            EventItem* eventItem = qobject_cast<EventItem*>(widget);
-            if (eventItem)
-            {
-                timeStrList.append(eventItem->getTime());//eventitem类已经判断好了，只要第一个的时间
-            }
-        }
-    }
-    QString timeStr=timeStrList.join("-");
+
     QSqlQuery query;
     QString str = QString("INSERT INTO task (task_name, create_name, create_time, task_description, task_type, task_path, task_questionnaire, task_event, trigger_questionnaire, trigger_event ,screen_x_y ,incentive,trigger_time) "
                           "VALUES ('%1', '%2', '%3', '%4', '%5', '%6', '%7', '%8', '%9', '%10', '%11' ,'%12','%13');")
@@ -575,7 +612,7 @@ void TaskWidget::on_buttonSave_clicked()
                       .arg(trigger_event_list.join(','))
                       .arg(PosX_PosY)
                       .arg(ui->JLList_Combox->currentText())
-                      .arg(timeStr);
+                      .arg(TriggerTime());
 
     if(!query.exec(str))
     {
@@ -599,7 +636,7 @@ void TaskWidget::on_buttonSave_clicked()
     taskListItem->set_create_time(QDateTime::currentDateTime());
     taskListItem->set_task_description(ui->task_description->toPlainText());
     ui->taskListLayout->insertWidget(0, taskListItem);
-
+    //  taskListItem->setTrigger_Time(timeStr);
     ui->stack_widget->setCurrentIndex(0);
     initUserComboxAndTaskCombox();
 
@@ -655,7 +692,7 @@ void TaskWidget::on_add_event_clicked()
         item->deleteLater();
     });
     ui->layout_event->addWidget(item);
-  //  m_event_item_count++;
+    //  m_event_item_count++;
 }
 
 void TaskWidget::on_task_return_clicked()
@@ -667,38 +704,50 @@ void TaskWidget::on_task_return_clicked()
 
 void TaskWidget::on_task_finish_clicked()
 {
-    ui->user_Combox->setEnabled(true);
-    ui->task_Combox->setEnabled(true);
-    ui->TaskConfig->setEnabled(true);
-    for (int i = 0; i < ui->taskListLayout->count(); ++i) {
-        // 获取布局中的子项
-        QLayoutItem* layoutItem = ui->taskListLayout->itemAt(i);
-        if (layoutItem) {
-            QWidget* widget = layoutItem->widget();
-            if (widget) {
-                // 检查这个子项是否是 TaskListItem 的实例
-                TaskListItem* taskListItem = qobject_cast<TaskListItem*>(widget);
-                if (taskListItem) {
-                    taskListItem->setLabel("选择任务");
-                    taskListItem->RecvStartFlag(false);
+    QMessageBox::StandardButton reply;
+    QString startMessage="确定结束任务："+ui->task_Combox->currentText();
+    reply = QMessageBox::question(nullptr, "确认删除", startMessage,
+                                  QMessageBox::Yes|QMessageBox::No);
+    if (reply == QMessageBox::Yes) {
+        ui->task_finish->setEnabled(false);
+        ui->user_Combox->setEnabled(true);
+        ui->task_Combox->setEnabled(true);
+        ui->TaskConfig->setEnabled(true);
+        for (int i = 0; i < ui->taskListLayout->count(); ++i) {
+            // 获取布局中的子项
+            QLayoutItem* layoutItem = ui->taskListLayout->itemAt(i);
+            if (layoutItem) {
+                QWidget* widget = layoutItem->widget();
+                if (widget) {
+                    // 检查这个子项是否是 TaskListItem 的实例
+                    TaskListItem* taskListItem = qobject_cast<TaskListItem*>(widget);
+                    if (taskListItem) {
+                        taskListItem->setLabel("选择任务");
+                        taskListItem->RecvStartFlag(false);
+                    }
                 }
             }
         }
+
+
+        ui->StartTask_btn->setText("开始任务");
+
+        m_task_timer->stop();
+        ui->timeEdit->setTime(QTime(0,0,0,0));
+
+        if (process.state() == QProcess::Running)
+        {
+            process.terminate();
+            process.waitForFinished(3000);
+        }
+
+        ui->ffmpeg_widget->stop_preview();
+
+    } else {
+        // 用户选择了“否”，取消删除操作
     }
 
 
-    ui->StartTask_btn->setText("开始任务");
-
-    m_task_timer->stop();
-    ui->timeEdit->setTime(QTime(0,0,0,0));
-
-    if (process.state() == QProcess::Running)
-    {
-        process.terminate();
-        process.waitForFinished(3000);
-    }
-
-    ui->ffmpeg_widget->stop_preview();
 }
 
 void TaskWidget::on_checkBox_type_left_clicked()
@@ -942,6 +991,7 @@ void TaskWidget::on_CloseExe_btn__clicked()
 
 void TaskWidget::on_finish_edit_clicked()
 {
+    Trigger_TimeList.clear();
     ScreenImportItemInfo *s_ScreenImportItemInfo =new ScreenImportItemInfo;
     // 假设 layout_Screen 是一个 QLayout 指针，指向你想要打印内容的布局
 
@@ -1024,24 +1074,7 @@ void TaskWidget::on_finish_edit_clicked()
         }
     }
     emit getTriggerTime();
-    QStringList timeStrList;
-    for(int i=0; i<ui->layout_event->count(); i++)
-    {
-        QLayoutItem* item = ui->layout_event->itemAt(i);
-        if (!item) continue;
 
-        QWidget* widget = item->widget();
-        if (widget)
-        {
-            EventItem* eventItem = qobject_cast<EventItem*>(widget);
-            if (eventItem)
-            {
-                timeStrList.append(eventItem->getTime());
-            }
-        }
-    }
-    QString timeStr=timeStrList.join("-");
-    qDebug()<<"timeStr:"<<timeStr;
     QSqlQuery query;
     QString task_name = ui->task_name->text();
     QString str = QString("UPDATE task "
@@ -1049,7 +1082,7 @@ void TaskWidget::on_finish_edit_clicked()
                           "task_description = '%3', task_type = '%4', task_path = '%5', "
                           "task_questionnaire = '%6', task_event = '%7', "
                           "trigger_questionnaire = '%8', trigger_event = '%9' , screen_x_y = '%10' , incentive = '%11', trigger_time= '%12'"
-            "WHERE task_name = '%13';")
+                          "WHERE task_name = '%13';")
                       .arg("小菜无敌")
                       .arg(QDateTime::currentDateTime().toString("yyyy-MM-dd HH:mm:ss"))  // 更新时间
                       .arg(ui->task_description->toPlainText())                           // 更新任务描述
@@ -1061,7 +1094,7 @@ void TaskWidget::on_finish_edit_clicked()
                       .arg(trigger_event_list.join(','))                                  // 更新触发事件列表
                       .arg(PosX_PosY)
                       .arg(ui->JLList_Combox->currentText())
-                      .arg(timeStr)
+                      .arg(TriggerTime())
                       .arg(task_name);                                                    // 指定更新的任务名
     if (!query.exec(str)) {
         qDebug() << "Update failed: " << query.lastError();
@@ -1154,47 +1187,56 @@ void TaskWidget::on_JL_Combox_activated(int index)
 
 void TaskWidget::on_StartTask_btn_clicked()
 {
-    ui->user_Combox->setEnabled(false);
-    ui->task_Combox->setEnabled(false);
-    ui->TaskConfig->setEnabled(false);
-    emit SendStartFlag(true);
-    for (int i = 0; i < ui->taskListLayout->count(); ++i) {
-        // 获取布局中的子项
-        QWidget* widget = ui->taskListLayout->itemAt(i)->widget();
+    QMessageBox::StandardButton reply;
+    QString startMessage="确定开始任务："+ui->task_Combox->currentText();
+    reply = QMessageBox::question(nullptr, "开始任务", startMessage,
+                                  QMessageBox::Yes|QMessageBox::No);
+    if (reply == QMessageBox::Yes) {
+        ui->task_finish->setEnabled(true);
+        ui->user_Combox->setEnabled(false);
+        ui->task_Combox->setEnabled(false);
+        emit SendStartFlag(true);
+        for (int i = 0; i < ui->taskListLayout->count(); ++i) {
+            // 获取布局中的子项
+            QWidget* widget = ui->taskListLayout->itemAt(i)->widget();
 
-        // 检查这个子项是否是 TaskListItem 的实例
-        if (TaskListItem* taskListItem = qobject_cast<TaskListItem*>(widget)) {
-            // 调用 task_name() 方法获取任务名
-            QString currentTaskName = taskListItem->task_name();
+            // 检查这个子项是否是 TaskListItem 的实例
+            if (TaskListItem* taskListItem = qobject_cast<TaskListItem*>(widget)) {
+                // 调用 task_name() 方法获取任务名
+                QString currentTaskName = taskListItem->task_name();
 
-            // 比较任务名
-            if (currentTaskName == ui->task_Combox->currentText()) {
+                // 比较任务名
+                if (currentTaskName == ui->task_Combox->currentText()) {
 
-                taskListItem->setLabel("任务进行中");
-                taskListItem->RecvStartFlag(false);
-                break;
+                    taskListItem->setLabel("任务进行中");
+                    taskListItem->RecvStartFlag(false);
+                    break;
+                }
             }
         }
+
+
+
+        if(ui->StartTask_btn->text()=="开始任务")
+        {
+            m_task_timer->start(1000);
+        }
+        else if(ui->StartTask_btn->text()=="暂停任务")
+        {
+            m_task_timer->stop();
+        }
+        else
+        {
+            m_task_timer->start(1000);
+        }
+        ui->StartTask_btn->setText(ui->StartTask_btn->text()=="暂停任务" ? "继续任务" : "暂停任务");
+
+
+        emit startTask(); //还没用上
+    } else {
+        // 用户选择了“否”，取消删除操作
     }
 
-
-
-    if(ui->StartTask_btn->text()=="开始任务")
-    {
-        m_task_timer->start(1000);
-    }
-    else if(ui->StartTask_btn->text()=="暂停任务")
-    {
-        m_task_timer->stop();
-    }
-    else
-    {
-        m_task_timer->start(1000);
-    }
-    ui->StartTask_btn->setText(ui->StartTask_btn->text()=="暂停任务" ? "继续任务" : "暂停任务");
-
-
-    emit startTask(); //还没用上
 
 
 
@@ -1271,6 +1313,7 @@ void TaskWidget::on_CloseExe_btn_1_clicked()
 
 void TaskWidget::on_TaskConfig_clicked()
 {
+    ui->return_btn->setVisible(true);
     ui->stack_widget->setCurrentIndex(0);
 }
 
@@ -1308,7 +1351,7 @@ void TaskWidget::on_task_Combox_currentTextChanged(const QString &arg1)
     query.next();
 
     QStringList exePath=query.value(0).toString().split(",");
-    qDebug()<<"eexepath:"<<exePath;
+  //  qDebug()<<"eexepath:"<<exePath;
     ui->exePath_comboBox->clear();
     if (!exePath.isEmpty()) {
         ui->exePath_comboBox->addItems(exePath);
@@ -1326,8 +1369,8 @@ void TaskWidget::on_task_Combox_currentTextChanged(const QString &arg1)
     }
     query.next();
     ExePos=query.value(0).toString().split(",");
-    qDebug()<<"exePath"<<exePath;
-    qDebug()<<"exepos"<<ExePos;
+  //  qDebug()<<"exePath"<<exePath;
+  //  qDebug()<<"exepos"<<ExePos;
 }
 
 
@@ -1366,5 +1409,12 @@ void TaskWidget::on_create_task_clicked()
     ui->finish_edit->hide();
 
     ui->stack_widget->setCurrentIndex(1);
+}
+
+
+void TaskWidget::on_return_btn_clicked()
+{
+    ui->stack_widget->setCurrentIndex(4);
+    ui->return_btn->setVisible(true);
 }
 

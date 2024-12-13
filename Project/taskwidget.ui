@@ -47,7 +47,7 @@ background-color: #FFFFFF;
 </string>
      </property>
      <property name="currentIndex">
-      <number>1</number>
+      <number>4</number>
      </property>
      <widget class="QWidget" name="page_1">
       <property name="styleSheet">
@@ -221,7 +221,7 @@ QLineEdit:focus,QDateEdit:focus {
                </property>
                <property name="dateTime">
                 <datetime>
-                 <hour>8</hour>
+                 <hour>0</hour>
                  <minute>0</minute>
                  <second>0</second>
                  <year>1999</year>
@@ -231,7 +231,7 @@ QLineEdit:focus,QDateEdit:focus {
                </property>
                <property name="minimumDateTime">
                 <datetime>
-                 <hour>8</hour>
+                 <hour>0</hour>
                  <minute>0</minute>
                  <second>0</second>
                  <year>1999</year>
@@ -270,7 +270,7 @@ QLineEdit:focus,QDateEdit:focus {
                </property>
                <property name="dateTime">
                 <datetime>
-                 <hour>8</hour>
+                 <hour>0</hour>
                  <minute>0</minute>
                  <second>0</second>
                  <year>1999</year>
@@ -280,7 +280,7 @@ QLineEdit:focus,QDateEdit:focus {
                </property>
                <property name="minimumDateTime">
                 <datetime>
-                 <hour>8</hour>
+                 <hour>0</hour>
                  <minute>0</minute>
                  <second>0</second>
                  <year>1999</year>
@@ -334,19 +334,7 @@ QLineEdit:focus,QDateEdit:focus {
           </item>
           <item>
            <widget class="QWidget" name="widget_4" native="true">
-            <layout class="QHBoxLayout" name="_2">
-             <property name="leftMargin">
-              <number>0</number>
-             </property>
-             <property name="topMargin">
-              <number>9</number>
-             </property>
-             <property name="rightMargin">
-              <number>0</number>
-             </property>
-             <property name="bottomMargin">
-              <number>9</number>
-             </property>
+            <layout class="QHBoxLayout" name="horizontalLayout_30">
              <item>
               <widget class="QPushButton" name="pushButton_3">
                <property name="minimumSize">
@@ -391,6 +379,19 @@ QLineEdit:focus,QDateEdit:focus {
                </property>
               </spacer>
              </item>
+             <item>
+              <widget class="QPushButton" name="return_btn">
+               <property name="minimumSize">
+                <size>
+                 <width>0</width>
+                 <height>29</height>
+                </size>
+               </property>
+               <property name="text">
+                <string>返回</string>
+               </property>
+              </widget>
+             </item>
             </layout>
            </widget>
           </item>
@@ -418,8 +419,8 @@ QLineEdit:focus,QDateEdit:focus {
            <rect>
             <x>0</x>
             <y>0</y>
-            <width>65</width>
-            <height>18</height>
+            <width>1210</width>
+            <height>577</height>
            </rect>
           </property>
           <property name="styleSheet">

@@ -10,9 +10,9 @@ EventItem::EventItem(QWidget *parent) :
     ui(new Ui::EventItem)
 {
     ui->setupUi(this);
-    static int i=0;
 
     connect(this, &EventItem::getTriggerTime, this, [=](){
+        this->TimeList.clear();
         for(int i=0; i<ui->eventItemLayout->count(); i++)
         {
             QLayoutItem* item = ui->eventItemLayout->itemAt(i);
@@ -23,14 +23,16 @@ EventItem::EventItem(QWidget *parent) :
             {
                 EventChildItem* eventChildItem = qobject_cast<EventChildItem*>(widget);
                 if (eventChildItem) {
-                    if(i==0)
+                    TimeList+=eventChildItem->getTime();
+                    if(i<ui->eventItemLayout->count()-1)
                     {
-                        setTimeString(eventChildItem->getTime());
+                        TimeList+=",";
                     }
-                    i++;
+
                 }
             }
         }
+
     });
 
 
@@ -56,14 +58,14 @@ void EventItem::on_add_child_clicked()
 
 void EventItem::on_delete_child_clicked()
 {
-   // if(ui->eventItemLayout->count() > 0)
-   // {
-   //     QLayoutItem* item = ui->eventItemLayout->takeAt(ui->eventItemLayout->count() - 1);
-   //     if (QWidget* widget = item->widget()) {
-   //         widget->deleteLater();
-   //     }
-   //     delete item;
-   // }
+    // if(ui->eventItemLayout->count() > 0)
+    // {
+    //     QLayoutItem* item = ui->eventItemLayout->takeAt(ui->eventItemLayout->count() - 1);
+    //     if (QWidget* widget = item->widget()) {
+    //         widget->deleteLater();
+    //     }
+    //     delete item;
+    // }
 
     QMessageBox::StandardButton reply;
     reply = QMessageBox::question(nullptr, "确认删除", "您确定要删除这个事件吗？",
@@ -72,7 +74,7 @@ void EventItem::on_delete_child_clicked()
         // 用户选择了“是”，在这里执行删除操作
         // ...
         emit requestDeletion();
-    
+
     } else {
         // 用户选择了“否”，取消删除操作
     }
@@ -95,22 +97,22 @@ QString EventItem::task_event()
 
 void EventItem::set_trigger_event(QString trigger_event)
 {
+    QStringList tempList=TimeList.split("-");
+    qDebug()<<"ok";
     QStringList trigger_event_list = trigger_event.split('-');
     for(int i=0; i<trigger_event_list.size(); i++)
     {
         EventChildItem *eventChildItem = new EventChildItem;
-        if(i!=0)
-        {
-            eventChildItem->setItemReadonly();
-        }
         eventChildItem->set_trigger_event(trigger_event_list.at(i).toInt());
-
+        eventChildItem->setTriggerTime(tempList[i]);
         ui->eventItemLayout->addWidget(eventChildItem);
     }
+
 }
 
 QString EventItem::trigger_event()
 {
+
     QStringList trigger_event_list;
     for(int i=0; i<ui->eventItemLayout->count(); i++)
     {
@@ -129,12 +131,12 @@ QString EventItem::trigger_event()
     return trigger_event_list.join('-');
 }
 
-QString EventItem::getTime()
+QString EventItem::getTimeList()
 {
-    return this->TimeString;
+    return this->TimeList;
 }
 
 void EventItem::setTimeString(QString str)
 {
-    this->TimeString=str;
+    this->TimeList=str;
 }

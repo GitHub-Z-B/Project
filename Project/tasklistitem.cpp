@@ -118,6 +118,16 @@ void TaskListItem::setPos_X_Y(QString x_y)
     this->pos_X_Y=x_y;
 }
 
+void TaskListItem::setTrigger_Time(QString time)
+{
+    this->trigger_time=time;
+}
+
+QString TaskListItem::getTrigger_Time()
+{
+    return this->trigger_time;
+}
+
 QString TaskListItem::getPos_X_Y()
 {
     return this->pos_X_Y;

@@ -11,6 +11,7 @@ debug/dynamicdatawidget.o
 debug/evaluatewidget.o
 debug/eventchilditem.o
 debug/eventitem.o
+debug/experimentaldata.o
 debug/main.o
 debug/mainwindow.o
 debug/questionitem.o
@@ -43,6 +44,7 @@ debug/moc_dynamicdatawidget.o
 debug/moc_evaluatewidget.o
 debug/moc_eventchilditem.o
 debug/moc_eventitem.o
+debug/moc_experimentaldata.o
 debug/moc_mainwindow.o
 debug/moc_questionitem.o
 debug/moc_questionlistitem.o

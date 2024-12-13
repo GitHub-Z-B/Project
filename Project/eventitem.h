@@ -16,7 +16,7 @@ public:
     QString task_event();
     void set_trigger_event(QString trigger_event);
     QString trigger_event();
-    QString getTime();
+    QString getTimeList();
     void setTimeString(QString str);
 
 signals:
@@ -24,6 +24,7 @@ signals:
 private:
     Ui::EventItem *ui;
     QString TimeString;
+    QString TimeList;
 
 private slots:
     void on_add_child_clicked();

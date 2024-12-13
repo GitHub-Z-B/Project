@@ -65,6 +65,8 @@ private:
     QStringList ExePathList;
     QStringList ExePos;
     bool FZFlag=false;
+    QList<QString> Trigger_TimeList;
+    QString TriggerTime();
 
 public slots:
     void readyRead();
@@ -120,6 +122,8 @@ private slots:
 
 
     void on_create_task_clicked();
+
+    void on_return_btn_clicked();
 
 signals:
     void closeExe();

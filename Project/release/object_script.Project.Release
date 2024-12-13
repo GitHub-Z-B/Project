@@ -11,6 +11,7 @@ release/dynamicdatawidget.o
 release/evaluatewidget.o
 release/eventchilditem.o
 release/eventitem.o
+release/experimentaldata.o
 release/main.o
 release/mainwindow.o
 release/questionitem.o
@@ -43,6 +44,7 @@ release/moc_dynamicdatawidget.o
 release/moc_evaluatewidget.o
 release/moc_eventchilditem.o
 release/moc_eventitem.o
+release/moc_experimentaldata.o
 release/moc_mainwindow.o
 release/moc_questionitem.o
 release/moc_questionlistitem.o

@@ -33,6 +33,8 @@ public:
     QString trigger_questionnaire() const;
     QString trigger_event() const;
     void setPos_X_Y(QString x_y);
+    void setTrigger_Time(QString time);
+    QString getTrigger_Time();
     QString getPos_X_Y();
     void setJL(QString name);
     QString JL();
@@ -49,7 +51,8 @@ private:
     QString m_trigger_event;
     QString pos_X_Y;
     QString JLName;
-    bool TaskStartFlag;
+    QString trigger_time;
+    bool TaskStartFlag=false;
 private slots:
     void on_task_start_clicked();
     void on_task_edit_clicked();

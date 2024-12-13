@@ -53,11 +53,12 @@ public:
     QSpacerItem *horizontalSpacer;
     QPushButton *add_task;
     QWidget *widget_4;
-    QHBoxLayout *_2;
+    QHBoxLayout *horizontalLayout_30;
     QPushButton *pushButton_3;
     QComboBox *comboBox;
     QComboBox *comboBox_2;
     QSpacerItem *horizontalSpacer_2;
+    QPushButton *return_btn;
     QScrollArea *scrollArea;
     QWidget *taskListWidget;
     QVBoxLayout *taskListLayout;
@@ -418,8 +419,8 @@ public:
         dateEdit->setReadOnly(false);
         dateEdit->setButtonSymbols(QAbstractSpinBox::ButtonSymbols::NoButtons);
         dateEdit->setKeyboardTracking(false);
-        dateEdit->setDateTime(QDateTime(QDate(1999, 12, 9), QTime(8, 0, 0)));
-        dateEdit->setMinimumDateTime(QDateTime(QDate(1999, 12, 9), QTime(8, 0, 0)));
+        dateEdit->setDateTime(QDateTime(QDate(1999, 12, 9), QTime(0, 0, 0)));
+        dateEdit->setMinimumDateTime(QDateTime(QDate(1999, 12, 9), QTime(0, 0, 0)));
 
         _1->addWidget(dateEdit);
 
@@ -435,8 +436,8 @@ public:
         dateEdit_2->setReadOnly(false);
         dateEdit_2->setButtonSymbols(QAbstractSpinBox::ButtonSymbols::NoButtons);
         dateEdit_2->setKeyboardTracking(false);
-        dateEdit_2->setDateTime(QDateTime(QDate(1999, 12, 9), QTime(8, 0, 0)));
-        dateEdit_2->setMinimumDateTime(QDateTime(QDate(1999, 12, 9), QTime(8, 0, 0)));
+        dateEdit_2->setDateTime(QDateTime(QDate(1999, 12, 9), QTime(0, 0, 0)));
+        dateEdit_2->setMinimumDateTime(QDateTime(QDate(1999, 12, 9), QTime(0, 0, 0)));
 
         _1->addWidget(dateEdit_2);
 
@@ -461,30 +462,35 @@ public:
 
         widget_4 = new QWidget(widget_2);
         widget_4->setObjectName("widget_4");
-        _2 = new QHBoxLayout(widget_4);
-        _2->setObjectName("_2");
-        _2->setContentsMargins(0, 9, 0, 9);
+        horizontalLayout_30 = new QHBoxLayout(widget_4);
+        horizontalLayout_30->setObjectName("horizontalLayout_30");
         pushButton_3 = new QPushButton(widget_4);
         pushButton_3->setObjectName("pushButton_3");
         pushButton_3->setMinimumSize(QSize(0, 29));
 
-        _2->addWidget(pushButton_3);
+        horizontalLayout_30->addWidget(pushButton_3);
 
         comboBox = new QComboBox(widget_4);
         comboBox->addItem(QString());
         comboBox->setObjectName("comboBox");
 
-        _2->addWidget(comboBox);
+        horizontalLayout_30->addWidget(comboBox);
 
         comboBox_2 = new QComboBox(widget_4);
         comboBox_2->addItem(QString());
         comboBox_2->setObjectName("comboBox_2");
 
-        _2->addWidget(comboBox_2);
+        horizontalLayout_30->addWidget(comboBox_2);
 
         horizontalSpacer_2 = new QSpacerItem(40, 20, QSizePolicy::Policy::Expanding, QSizePolicy::Policy::Minimum);
 
-        _2->addItem(horizontalSpacer_2);
+        horizontalLayout_30->addItem(horizontalSpacer_2);
+
+        return_btn = new QPushButton(widget_4);
+        return_btn->setObjectName("return_btn");
+        return_btn->setMinimumSize(QSize(0, 29));
+
+        horizontalLayout_30->addWidget(return_btn);
 
 
         verticalLayout_2->addWidget(widget_4);
@@ -502,7 +508,7 @@ public:
         scrollArea->setWidgetResizable(true);
         taskListWidget = new QWidget();
         taskListWidget->setObjectName("taskListWidget");
-        taskListWidget->setGeometry(QRect(0, 0, 65, 18));
+        taskListWidget->setGeometry(QRect(0, 0, 1210, 577));
         taskListWidget->setStyleSheet(QString::fromUtf8("QWidget#taskListWidget{\n"
 "background-color: rgb(255, 255, 255);\n"
 "}"));
@@ -1533,7 +1539,7 @@ public:
 
         retranslateUi(TaskWidget);
 
-        stack_widget->setCurrentIndex(1);
+        stack_widget->setCurrentIndex(4);
         tabWidget->setCurrentIndex(0);
 
 
@@ -1558,6 +1564,7 @@ public:
 
         comboBox_2->setItemText(0, QCoreApplication::translate("TaskWidget", "\346\234\272\345\236\213\350\257\204\344\274\260", nullptr));
 
+        return_btn->setText(QCoreApplication::translate("TaskWidget", "\350\277\224\345\233\236", nullptr));
         label_8->setText(QCoreApplication::translate("TaskWidget", "\345\237\272\346\234\254\344\277\241\346\201\257", nullptr));
         label_7->setText(QCoreApplication::translate("TaskWidget", "\347\261\273\345\236\213\351\200\211\346\213\251", nullptr));
         checkBox_type_left->setText(QCoreApplication::translate("TaskWidget", "\345\216\237\345\236\213\350\257\204\344\274\260", nullptr));
